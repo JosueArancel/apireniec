@@ -14,7 +14,7 @@ $("#btn_search").click(function (e) {
                 num_docu: num_docu.value
             },
             beforeSend: (e) => {
-                btn_search.setAttribute("readonly", true)
+                btn_search.setAttribute("disabled", true)
             },
             success: function (response) {
                 let data = JSON.parse(response)
@@ -27,7 +27,7 @@ $("#btn_search").click(function (e) {
                     alert("EL NRO. DNI NO SE ENCUENTRA REGISTRADO EN LA RENIEC")
                 }
             }, complete: (e) => {
-                btn_search.setAttribute("readonly", false)
+                btn_search.removeAttribute("disabled")
             }
         });
     }
